@@ -1,34 +1,55 @@
-# PeopleDesk Employee Management System
+# PeopleDesk – Employee Management System
 
-A Flask + MySQL employee management project with login, registration, dashboard, and employee CRUD screens.
+PeopleDesk is a simple employee management web application built using Python Flask and MySQL. It helps users manage employee records efficiently.
 
-## 1. Requirements
-- Python 3.10 or newer
-- MySQL Server running locally
+## Features
+- User Registration and Login
+- Employee Dashboard
+- Add, View, Edit, and Delete Employees
+- MySQL Database Integration
+- Simple and User-Friendly Interface
 
-## 2. Setup
-Open a terminal in this folder and run:
+## Technologies Used
+- Python
+- Flask
+- MySQL
+- HTML and CSS
 
-```bash
-python -m venv venv
-```
+## Installation
 
-Windows PowerShell:
-```powershell
-.\venv\Scripts\Activate.ps1
-Copy-Item .env.example .env
-pip install -r requirements.txt
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/nagarjunabande8-vk/Employee.git
+   ```
 
-Edit `.env` and set `DB_USER`, `DB_PASSWORD`, and `DB_NAME` to match your MySQL setup. `DB_PASSWORD` is the password for your MySQL account, not the website login password. The app creates the database and tables automatically, so the MySQL account needs permission to create the database and tables.
+2. Go to the project folder:
+   ```bash
+   cd Employee/employee_management
+   ```
 
-## 3. Run
-```bash
-python app.py
-```
-Then open http://127.0.0.1:5000 in Chrome.
+3. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   ```
+   ```powershell
+   .\venv\Scripts\Activate.ps1
+   ```
 
-## Notes
-- Change `SECRET_KEY` to a long random value before using this outside local development.
-- Website admin credentials are created using the Register page and are stored as password hashes.
-- Do not share or commit your `.env` file.
+4. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. Copy `.env.example` to `.env` and configure your MySQL credentials.
+
+6. Run the application:
+   ```bash
+   python app.py
+   ```
+
+7. Open http://127.0.0.1:5000 in your browser.
+
+## Author
+Nagarjuna Bande
+
+GitHub: https://github.com/nagarjunabande8-vk
