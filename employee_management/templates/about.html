@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}About | Employee Management System{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <span class="section-label">About the System</span>
+        <h1 class="display-6 fw-bold mt-2">Employee Management System</h1>
+        <p class="lead text-muted mb-0">
+            A practical Flask and MySQL application for secure employee administration.
+        </p>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="content-card h-100">
+                    <h2 class="h4 fw-bold mb-3">What is this application?</h2>
+                    <p class="text-muted">
+                        The Employee Management System is a Flask and MySQL based web
+                        application designed to manage employee records. Admin and HR
+                        users can authenticate securely and perform CRUD operations on
+                        employee information.
+                    </p>
+                    <p class="text-muted mb-0">
+                        Database tables are initialized automatically by Flask using
+                        mysql.connector, so no separate SQL setup file is required.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="content-card h-100">
+                    <h2 class="h4 fw-bold mb-3">Technology Stack</h2>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge tech-badge">Python</span>
+                        <span class="badge tech-badge">Flask</span>
+                        <span class="badge tech-badge">MySQL</span>
+                        <span class="badge tech-badge">mysql.connector</span>
+                        <span class="badge tech-badge">Jinja2</span>
+                        <span class="badge tech-badge">HTML5</span>
+                        <span class="badge tech-badge">CSS3</span>
+                        <span class="badge tech-badge">Bootstrap 5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-1">
+            <div class="col-md-4">
+                <div class="feature-card h-100">
+                    <h3 class="h5 fw-bold">Admin Authentication</h3>
+                    <p class="text-muted mb-0">
+                        Password hashing, credential verification, session management,
+                        and protected administrative routes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card h-100">
+                    <h3 class="h5 fw-bold">CRUD Operations</h3>
+                    <p class="text-muted mb-0">
+                        Create, read, update, and delete employee records using
+                        parameterized MySQL queries.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card h-100">
+                    <h3 class="h5 fw-bold">Session Management</h3>
+                    <p class="text-muted mb-0">
+                        Flask sessions control authentication state and dynamically
+                        change the navigation experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}View Employees | Employee Management System{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
+            <div>
+                <span class="section-label">Employee Records</span>
+                <h1 class="display-6 fw-bold mt-2 mb-2">View Employees</h1>
+                <p class="text-muted mb-0">
+                    Search and manage all employee records.
+                </p>
+            </div>
+
+            <a href="{{ url_for('add_employee') }}" class="btn btn-primary">
+                Add Employee
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding pt-2">
+    <div class="container">
+        <div class="content-card mb-4">
+            <form method="GET" action="{{ url_for('view_employees') }}">
+                <div class="row g-2 align-items-end">
+                    <div class="col-md-9">
+                        <label for="search" class="form-label">Search Employees</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="search"
+                            name="search"
+                            placeholder="Search by ID, name, department, or phone"
+                            value="{{ search }}"
+                        >
+                    </div>
+                    <div class="col-md-3 d-grid">
+                        <button type="submit" class="btn btn-outline-primary">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            {% if search %}
+                <div class="mt-3">
+                    <span class="badge rounded-pill text-bg-light">
+                        Search: {{ search }}
+                    </span>
+                    <a href="{{ url_for('view_employees') }}" class="ms-2 text-decoration-none">
+                        Clear search
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="table-card">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Salary</th>
+                            <th>Phone</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for employee in employees %}
+                            <tr>
+                                <td class="fw-semibold">{{ employee[0] }}</td>
+                                <td>{{ employee[1] }}</td>
+                                <td>
+                                    <span class="badge department-badge">
+                                        {{ employee[2] }}
+                                    </span>
+                                </td>
+                                <td>₹{{ "{:,}".format(employee[3]) }}</td>
+                                <td>{{ employee[4] }}</td>
+                                <td>
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <a
+                                            href="{{ url_for('edit_employee', eid=employee[0]) }}"
+                                            class="btn btn-sm btn-outline-primary"
+                                        >
+                                            Edit
+                                        </a>
+
+                                        <form
+                                            method="POST"
+                                            action="{{ url_for('delete_employee', eid=employee[0]) }}"
+                                        >
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="6" class="text-center py-5">
+                                    <h3 class="h5 fw-bold">No employees found</h3>
+                                    <p class="text-muted mb-3">
+                                        {% if search %}
+                                            Try another search term.
+                                        {% else %}
+                                            Add your first employee record.
+                                        {% endif %}
+                                    </p>
+                                    {% if not search %}
+                                        <a href="{{ url_for('add_employee') }}" class="btn btn-primary">
+                                            Add Employee
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

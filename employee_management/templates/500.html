@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}500 | Employee Management System{% endblock %}
+
+{% block content %}
+<section class="error-section">
+    <div class="container text-center">
+        <div class="error-number">500</div>
+        <h1 class="h2 fw-bold">Something Went Wrong</h1>
+        <p class="text-muted mb-4">
+            The server encountered an unexpected error. Please try again.
+        </p>
+        <a href="{{ url_for('home') }}" class="btn btn-primary">
+            Return Home
+        </a>
+    </div>
+</section>
+{% endblock %}

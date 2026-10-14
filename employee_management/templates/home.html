@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Employee Management System{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="badge rounded-pill text-bg-light text-primary mb-3 px-3 py-2">
+                    Admin &amp; HR Management Platform
+                </span>
+                <h1 class="display-4 fw-bold mb-3">
+                    Employee Management System
+                </h1>
+                <p class="lead mb-4">
+                    Manage your employees efficiently, securely, and easily with a
+                    centralized Flask and MySQL application.
+                </p>
+
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="{{ url_for('login') }}" class="btn btn-light btn-lg px-4">
+                        Login
+                    </a>
+                    <a href="{{ url_for('register') }}" class="btn btn-outline-light btn-lg px-4">
+                        Register
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="hero-panel">
+                    <h2 class="h4 fw-bold">Simple. Secure. Centralized.</h2>
+                    <p class="mb-0">
+                        Maintain employee records, update information, search records,
+                        and manage the complete employee lifecycle from one dashboard.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">Core Features</span>
+            <h2 class="fw-bold mt-2">Everything HR needs for employee records</h2>
+            <p class="text-muted mb-0">
+                A clean server-rendered application with secure authentication and database-backed CRUD operations.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">01</div>
+                    <h3 class="h5 fw-bold">Employee Management</h3>
+                    <p class="text-muted mb-0">
+                        Add, view, edit, and remove employee records from a centralized system.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">02</div>
+                    <h3 class="h5 fw-bold">CRUD Operations</h3>
+                    <p class="text-muted mb-0">
+                        Perform reliable create, read, update, and delete database operations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">03</div>
+                    <h3 class="h5 fw-bold">Secure Admin Login</h3>
+                    <p class="text-muted mb-0">
+                        Protect administrative functions with password hashing and Flask sessions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">04</div>
+                    <h3 class="h5 fw-bold">Centralized Records</h3>
+                    <p class="text-muted mb-0">
+                        Keep employee information organized in a structured MySQL database.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding section-muted">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+                <span class="section-label">Project Overview</span>
+                <h2 class="fw-bold mt-2">Designed for practical HR administration</h2>
+                <p class="text-muted mb-0">
+                    The system combines Python, Flask, MySQL, mysql.connector, Jinja2,
+                    HTML5, CSS3, and Bootstrap 5 to provide a responsive web application
+                    without client-side JavaScript.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{{ url_for('about') }}" class="btn btn-primary px-4">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

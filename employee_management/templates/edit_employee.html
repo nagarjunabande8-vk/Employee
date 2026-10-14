@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Employee | Employee Management System{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <span class="section-label">Employee Records</span>
+        <h1 class="display-6 fw-bold mt-2">Edit Employee</h1>
+        <p class="lead text-muted mb-0">
+            Update the selected employee's information.
+        </p>
+    </div>
+</section>
+
+<section class="section-padding pt-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-card">
+                    <form method="POST" action="{{ url_for('edit_employee', eid=employee[0]) }}">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="eid" class="form-label">Employee ID</label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="eid"
+                                    name="eid"
+                                    value="{{ employee[0] }}"
+                                    readonly
+                                >
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="ename" class="form-label">Employee Name</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="ename"
+                                    name="ename"
+                                    maxlength="50"
+                                    required
+                                    value="{{ employee[1] }}"
+                                >
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="edept" class="form-label">Department</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="edept"
+                                    name="edept"
+                                    maxlength="50"
+                                    required
+                                    value="{{ employee[2] }}"
+                                >
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="esalary" class="form-label">Salary</label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="esalary"
+                                    name="esalary"
+                                    min="0"
+                                    required
+                                    value="{{ employee[3] }}"
+                                >
+                            </div>
+
+                            <div class="col-12">
+                                <label for="ephone" class="form-label">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="ephone"
+                                    name="ephone"
+                                    maxlength="15"
+                                    required
+                                    value="{{ employee[4] }}"
+                                >
+                            </div>
+
+                            <div class="col-12 pt-2">
+                                <button type="submit" class="btn btn-primary px-4">
+                                    Update Employee
+                                </button>
+                                <a href="{{ url_for('view_employees') }}" class="btn btn-outline-secondary ms-2">
+                                    Cancel
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
